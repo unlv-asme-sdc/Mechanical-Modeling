@@ -25,7 +25,7 @@ classdef Motor
 				obj.free_current = FREE_CURRENT;
 				obj.stall_torque = STALL_TORQUE;
 				obj.stall_current = STALL_CURRENT;
-				if(isstring(MOTOR_NAME))
+				if(ischar(MOTOR_NAME))
 					obj.motor_name = MOTOR_NAME;
 				end
 			else
