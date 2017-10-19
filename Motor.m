@@ -63,7 +63,11 @@ classdef Motor
 
 			% plots effeciency
 			eff = power./(amp*voltage)*100;
-			plot(amps, (eff * (max(rpm)/max(eff))));
+			eff_scaled = eff * (max(rpm)/max(eff)) * (max(eff)/100);
+			[y,index] = max(eff_scaled);
+			plot(amps, (eff_scaled));
+			s = sprintf('eff: %.1f%%', max(eff))
+			text(amps(index), y, ['\leftarrow' s]);
 
 			% plots torque
 			yyaxis right
